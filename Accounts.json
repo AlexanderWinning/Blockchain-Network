@@ -1,0 +1,31 @@
+{"Accounts": [
+  {
+    "0xD778531C2B7A1882F393615F93F72897EE322ED8": [
+      { "Balance": 1000 },
+      { "TxCount": 1 }
+    ]
+  },
+
+  {
+    "0x8F28BA95F58044DE6BF0A3C3C230BD16788A0300": [
+      { "Balance": 2000 },
+      { "TxCount": 1 }
+    ]
+  },
+  {
+    "CurrentWnIP": [
+      { "VersionMinimum": 1 },
+      { "Coinbase": 50 },
+      { "CoinbaseHalving": 2000 },
+      { "TargetBlockTime": 120 }
+    ]
+  },
+  {
+    "KnownNodes": [
+      "127.0.0.1",
+      "127.0.0.1"
+    ]
+  }
+ 
+ ]
+}

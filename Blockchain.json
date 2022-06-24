@@ -1,0 +1,41 @@
+{"Blockchain" : [
+  {
+    "0": [
+      { "BlockHash": "" },
+      { "BlockSize": 20000 },
+      {
+        "BlockHeader": [
+          { "Version": 1 },
+          { "PreviousBlockHash": "" },
+          { "MerkleRoot": "" },
+          { "Timestamp": "1902;04/06/22" },
+          { "DifficultyTarget": 1 },
+          { "Nonce": 1 }
+        ]
+      },
+      { "TransactionCounter": 1 },
+      { "Transactions": [] }
+    ]
+
+  },
+  {
+    "1": [
+      { "BlockHash": "" },
+      { "BlockSize": 20000 },
+      {
+        "BlockHeader": [
+          { "Version": 1 },
+          { "PreviousBlockHash": "" },
+          { "MerkleRoot": "" },
+          { "Timestamp": "1912;04/06/22" },
+          { "DifficultyTarget": 1 },
+          { "Nonce": 1 }
+        ]
+      },
+      { "TransactionCounter": 1 },
+      { "Transactions": [] }
+    ]
+  }
+  
+ ]
+}
