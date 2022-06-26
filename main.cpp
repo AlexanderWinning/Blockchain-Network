@@ -7,7 +7,7 @@
 #include<stdc++.hpp>
 #include<boost/algorithm/string.hpp>
 #include<jsoncpp/include/json/json.h>
-#include"sha256.h" // Not the best look into it further
+#include"sha256.h"
 #include<WinSock2.h>
 #include<Windows.h>
 #include<WS2tcpip.h>
