@@ -339,14 +339,39 @@ void ExecuteTx() {
     for (int i = 0; i < Block.TransactionCounter; i++) {
         vector<string> Tx;
         boost::split(Tx, Block.Transactions[i], boost::is_any_of(":"));
-        if (i == 0) {
-            Accounts[Tx[2]][0] = Accounts[Tx[2]][0].asInt() + stoi(Tx[1]);
+        bool Valid = false;
+        for (int j = 0; j < Accounts.size(); j++) {
+            if (Tx[2] == Accounts[j].asString()) {
+                Valid = true;
+            }
+        }
+        if (Valid) {
+            if (i == 0) {
+                Accounts[Tx[2]][0] = Accounts[Tx[2]][0].asInt() + stoi(Tx[1]);
+            }
+            else {
+                Accounts[Tx[0]][0] = Accounts[Tx[0]][0].asInt() - stoi(Tx[1]);
+                Accounts[Tx[2]][0] = Accounts[Tx[2]][0].asInt() + stoi(Tx[1]);
+                Accounts[Tx[0]][1] = Accounts[Tx[0]][1].asInt() + 1;
+            };
         }
         else {
-            Accounts[Tx[0]][0] = Accounts[Tx[0]][0].asInt() - stoi(Tx[1]);
-            Accounts[Tx[2]][0] = Accounts[Tx[2]][0].asInt() + stoi(Tx[1]);
-            Accounts[Tx[0]][1] = Accounts[Tx[0]][1].asInt() + 1;
+            string text = "{ \"" + Tx[2] + "\": [{ \"Balance\": " + Tx[1] + " }, { \"TxCount\": 0 }]},";
+            bool parsingSuccessful = RAccounts.parse(text, Accounts);
+            if (!parsingSuccessful)
+            {
+                cout << "Error parsing the string" << endl;
+            }
+
+            for (Json::Value::const_iterator outer = Accounts.begin(); outer != Accounts.end(); outer++)
+            {
+                for (Json::Value::const_iterator inner = (*outer).begin(); inner != (*outer).end(); inner++)
+                {
+                    cout << inner.key() << ": " << *inner << endl;
+                }
+            }
         }
+        
     }
 }
 
